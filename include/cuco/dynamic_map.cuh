@@ -347,7 +347,7 @@ class dynamic_map {
   std::size_t capacity_{};   ///< Maximum number of keys that can be inserted
   float max_load_factor_{};  ///< Max load factor before capacity growth
 
-  std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope>>>
+  std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope, Allocator>>>
     submaps_;                                      ///< vector of pointers to each submap
   thrust::device_vector<view_type> submap_views_;  ///< vector of device views for each submap
   thrust::device_vector<mutable_view_type>
