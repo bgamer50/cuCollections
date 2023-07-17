@@ -69,8 +69,8 @@ dynamic_map<Key, Value, Scope, Allocator>::dynamic_map(std::size_t initial_capac
     erased_key<Key>{erased_key_sentinel_},
     alloc,
     stream));
-  submap_views_.push_back(reinterpret_cast<view_type>(submaps_[0]->get_device_view()));
-  submap_mutable_views_.push_back(reinterpret_cast<mutable_view_type>(submaps_[0]->get_device_mutable_view()));
+  submap_views_.push_back(submaps_[0]->get_device_view());
+  submap_mutable_views_.push_back(submaps_[0]->get_device_mutable_view());
   submap_num_successes_.push_back(submaps_[0]->num_successes_);
 }
 
