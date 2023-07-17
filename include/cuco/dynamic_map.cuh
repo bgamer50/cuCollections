@@ -106,9 +106,9 @@ class dynamic_map {
   using mapped_type     = Value;                             ///< Type of mapped values
   using atomic_ctr_type = cuda::atomic<std::size_t, Scope>;  ///< Atomic counter type
   using view_type =
-    typename static_map<Key, Value, Scope, Allocator>::device_view;  ///< Type for submap device view
+    typename static_map<Key, Value, Scope>::device_view;  ///< Type for submap device view
   using mutable_view_type =
-    typename static_map<Key, Value, Scope, Allocator>::device_mutable_view;  ///< Type for submap mutable
+    typename static_map<Key, Value, Scope>::device_mutable_view;  ///< Type for submap mutable
                                                                   ///< device view
 
   dynamic_map(dynamic_map const&) = delete;
