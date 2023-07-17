@@ -349,8 +349,8 @@ class dynamic_map {
 
   std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope, Allocator>>>
     submaps_;                                      ///< vector of pointers to each submap
-  thrust::device_vector<static_map<Key, Value, Scope, Allocator>::device_view> submap_views_;  ///< vector of device views for each submap
-  thrust::device_vectorstatic_map<Key, Value, Scope, Allocator>::device_view>
+  thrust::device_vector<view_type> submap_views_;  ///< vector of device views for each submap
+  thrust::device_vector<mutable_view_type>
     submap_mutable_views_;         ///< vector of mutable device views for each submap
   std::size_t min_insert_size_{};  ///< min remaining capacity of submap for insert
   thrust::device_vector<atomic_ctr_type*>
