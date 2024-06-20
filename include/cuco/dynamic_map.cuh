@@ -337,7 +337,7 @@ class dynamic_map {
    */
   float get_load_factor() const noexcept { return static_cast<float>(size_) / capacity_; }
 
-  inline std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope, Allocator>>> get_submaps() {
+  inline std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope, Allocator>>>& view_submaps() {
     return this->submaps_;
   }
 
