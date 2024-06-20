@@ -337,6 +337,10 @@ class dynamic_map {
    */
   float get_load_factor() const noexcept { return static_cast<float>(size_) / capacity_; }
 
+  inline std::vector<std::unique_ptr<static_map<key_type, mapped_type, Scope, Allocator>>> get_submaps() {
+    return this->submaps_;
+  }
+
  private:
   key_type empty_key_sentinel_{};       ///< Key value that represents an empty slot
   mapped_type empty_value_sentinel_{};  ///< Initial value of empty slot
